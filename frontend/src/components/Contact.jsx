@@ -32,7 +32,7 @@ const sendMail = async (e) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:4000/send/mail",
+      `${import.meta.env.VITE_API_URL || "http://localhost:4000"}/send/mail`,
       {
         name,
         email,
