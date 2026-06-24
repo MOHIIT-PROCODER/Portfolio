@@ -6,7 +6,7 @@ import { sendEmail } from "./utils/sendEmail.js";
 const app = express();
 const router = express.Router();
 
-config({ path: "./config.env" });
+config({ path: "./.env" });
 
 app.use(
   cors({
