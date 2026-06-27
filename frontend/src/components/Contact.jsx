@@ -48,8 +48,7 @@ const sendMail = async (e) => {
 
   } catch (error) {
     console.log(error); // important
-
-    toast.error("Backend not running");
+    toast.error(error.response?.data?.message || "Something went wrong. Please try again.");
   }
 
   setLoading(false);

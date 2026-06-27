@@ -53,6 +53,16 @@ router.post("/send/mail", async (req, res, next) => {
 // ✅ use router AFTER route
 app.use(router);
 
+// ✅ error handler middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({
+    success: false,
+    message: "Internal Server Error",
+    error: err.message
+  });
+});
+
 
 // ✅ listen must be last
 app.listen(process.env.PORT, () => {
